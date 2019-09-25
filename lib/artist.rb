@@ -4,21 +4,11 @@ class Artist
   
   def initialize(name)
     @name = name 
-    @songs = []
-  end 
-  
-  def find_songs
-      Song.all.each {|song| 
-      if song.artist.name == self.name
-        @songs << song 
-      end 
-      }
   end 
   
   def songs
-    find_songs
-    @songs
-  end
+      Song.all.collect {|song| song.artist.name == self.name}
+  end 
   
   def add_song(song)
     song.artist = self 

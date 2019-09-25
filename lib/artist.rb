@@ -7,7 +7,7 @@ class Artist
   end 
   
   def songs
-    all_songs = Song.all.collect {|song| song.artist.name == self.name}
+    all_songs = Song.all.select {|song| song.artist.name == self.name}
   end 
   
   def add_song(song)

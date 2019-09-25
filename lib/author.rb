@@ -5,15 +5,14 @@ class Author
     @name = name 
   end
   
-  def posts 
-    
-  end 
-  
-  def find_posts
-    posts = []
+  def posts
+    all_posts = []
     Post.all.each do |post| 
       if post.author.name == self.name 
-        posts << 
+        all_posts << post
+      end 
+    end 
+    all_posts 
   end 
   
 end 

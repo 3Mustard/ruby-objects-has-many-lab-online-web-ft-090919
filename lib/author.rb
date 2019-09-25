@@ -10,7 +10,10 @@ class Author
   end 
   
   def find_posts
-    Posts.all.
+    posts = []
+    Post.all.each do |post| 
+      if post.author.name == self.name 
+        posts << 
   end 
   
 end 

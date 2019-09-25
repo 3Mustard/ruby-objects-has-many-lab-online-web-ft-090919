@@ -9,6 +9,10 @@ class Author
     
   end 
   
+  def find_posts
+    Posts.all.
+  end 
+  
 end 
 
 describe "#posts" do

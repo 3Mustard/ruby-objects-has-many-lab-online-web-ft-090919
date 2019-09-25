@@ -6,13 +6,11 @@ class Author
   end
   
   def posts
-    all_posts = []
-    Post.all.each do |post| 
-      if post.author.name == self.name 
-        all_posts << post
-      end 
-    end 
-    all_posts 
+    all_posts = Post.all.select {|post| post.author.name == self.name}
+  end 
+  
+  def add_post(post)
+    
   end 
   
 end 
